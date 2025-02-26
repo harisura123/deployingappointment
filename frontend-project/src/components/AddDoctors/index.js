@@ -16,7 +16,7 @@ function AddDoctors(){
     const navigate = useNavigate()
         const onAddDoctor = event =>{
         event.preventDefault()
-        axios.post('http://localhost:3002/adddoctor', {image, name, speciality, email, degree, experience, fees, about})
+        axios.post('deployingappointment-api.vercel.app/adddoctor', {image, name, speciality, email, degree, experience, fees, about})
         .then(result => {console.log(result)
         navigate('/alldoctors')
     })
