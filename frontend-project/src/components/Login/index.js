@@ -9,7 +9,7 @@ function Login(){
     const navigate = useNavigate()
     const onLoginData = event => {
         event.preventDefault()
-        axios.post('deployingappointment-api.vercel.app/login', {username, password})
+        axios.post('https://deployingappointment-api.vercel.app/login', {username, password})
         .then(result => {console.log(result)
             if(result.data === 'Success'){
             navigate('/home')
