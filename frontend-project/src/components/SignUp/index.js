@@ -9,7 +9,7 @@ function SignUp() {
     const navigate = useNavigate()
     const onAddElement = event => {
         event.preventDefault()
-        axios.post('deployingappointment-api.vercel.app/register', {username, password, email})
+        axios.post('https://deployingappointment-api.vercel.app/register', {username, password, email})
         .then(result => {console.log(result)
         navigate('/login')
     })
