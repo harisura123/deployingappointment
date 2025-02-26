@@ -7,7 +7,7 @@ const MongooseAddPatient = require('./patient/PatientDetails')
 const app = express()
 app.use(express.json())
 app.use(cors({
-    origin: [],
+    origin: ["https://deployingappointment.vercel.app/"],
     methods: ["GET","POST", "PUT", "DELETE"],
     credentials: true
 }))
