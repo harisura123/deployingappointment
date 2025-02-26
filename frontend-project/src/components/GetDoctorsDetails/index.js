@@ -20,7 +20,7 @@ function GetDoctorsDetails(){
     const [time, setTime] = useState()
     const navigate = useNavigate()
     useEffect(() => {
-       axios.get('http://localhost:3002/getDoctors/'+id)
+       axios.get('deployingappointment-api.vercel.app/getDoctors/'+id)
         .then(res => {console.log(res)
             setImage(res.data.image)
             setName(res.data.name)
@@ -36,7 +36,7 @@ function GetDoctorsDetails(){
     
     const onAddPatient = (event) => {
         event.preventDefault()
-        axios.post('http://localhost:3002/addpatient', {name, speciality, patientName, age, gender, date, time})
+        axios.post('deployingappointment-api.vercel.app/addpatient', {name, speciality, patientName, age, gender, date, time})
         .then(result => {console.log(result)
             navigate('/home')
         })
