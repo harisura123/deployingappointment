@@ -8,7 +8,7 @@ const AllDoctors = () => {
     const [adddoctor, setAddDoctor] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:3002')
+        axios.get('deployingappointment-api.vercel.app')
         .then(result => setAddDoctor(result.data))
         .catch(err => console.log(err))
     })
