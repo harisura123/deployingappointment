@@ -15,7 +15,7 @@ function UpdateDetails() {
     const [time, setTime] = useState()
     const navigate =  useNavigate()
     useEffect(() => {
-       axios.get('http://localhost:3002/addpatient/'+id)
+       axios.get('deployingappointment-api.vercel.app/addpatient/'+id)
         .then(res => {console.log(res)  
             setName(res.data.name)
             setSpeciality(res.data.speciality)
@@ -30,7 +30,7 @@ function UpdateDetails() {
     
     const onEditPatient = e => {
         e.preventDefault()
-        axios.put('http://localhost:3002/update/'+id, {name, speciality, patientName, age, gender, date, time})
+        axios.put('deployingappointment-api.vercel.app/update/'+id, {name, speciality, patientName, age, gender, date, time})
         .then(result => {console.log(result) 
                         navigate('/home')})
         .catch(err => console.log(err))
