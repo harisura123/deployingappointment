@@ -7,14 +7,14 @@ function Home(){
     const [addpatient, setAddpatient] = useState([])
     
     useEffect(() => {
-    axios.get('http://localhost:3002/addpatient')
+    axios.get('deployingappointment-api.vercel.app/addpatient')
         .then(result => setAddpatient(result.data))
         .catch(err => console.log(err))
     })
 
     
     const handledelete = id => {
-        axios.delete("http://localhost:3002/userdelete/"+id)
+        axios.delete("deployingappointment-api.vercel.app/userdelete/"+id)
         .then(res => {console.log(res)
             window.location.reload()
         })
